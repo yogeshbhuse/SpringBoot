@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * Class For Reading the Property Files fields
- * Created by Xoriant
  */
 
 public class PropertyReaderConfig {
