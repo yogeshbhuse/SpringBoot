@@ -73,4 +73,23 @@ public class CrudService {
          }
         return true;
     }
+
+    public boolean updateProduct(ProductDTO productDTO){
+
+        try{
+            Product product=prodcutRepository.findById(productDTO.getId());
+            product.setProductId(productDTO.getProductId());
+            product.setProductName(productDTO.getProductName());
+            product.setProductDecscrption(productDTO.getProductDecscrption());
+           //Product product=Product.newpProductBuilder(productDTO).build();
+           prodcutRepository.save(product);
+        }catch (Exception exception){
+            CustomErrorResponse customErrorResponse=new CustomErrorResponse();
+            Object[] obj=new Object[]{"Product"};
+            Object[] obj2=new Object[]{"Product"};
+            CustomErrorDTO errorDTO=customErrorResponse.errorResponse(messageService, "error.updaterecord", obj, obj2);
+            throw new SpringBootCustomException(errorDTO);
+        }
+        return  true;
+    }
 }

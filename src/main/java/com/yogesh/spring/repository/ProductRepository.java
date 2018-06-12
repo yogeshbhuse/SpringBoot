@@ -15,5 +15,8 @@ public interface ProductRepository extends CrudRepository<Product,Integer> {
       @Query(name ="SELECT * FROM PRODUCT_DETAILS WHERE PRODUCT_ID=:productId" , nativeQuery = false)
       Product findByProductId(@Param("productId") String productId);
 
+      @Query(name ="SELECT * FROM PRODUCT_DETAILS WHERE id=:id" , nativeQuery = false)
+      Product findById(@Param("id") Integer productId);
+
 
 }

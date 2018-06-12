@@ -5,6 +5,7 @@ import com.yogesh.spring.services.CrudService;
 import com.yogesh.spring.util.Responses;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,14 +39,22 @@ public class CrudRestController {
     @RequestMapping(value = "/addProduct", method = RequestMethod.PUT, produces = "application/json")
     @ApiOperation(value = "Add New Prodcut details")
     public ResponseEntity addNewProdcut(@RequestBody ProductDTO productDTO) {
-        return Responses.ok(crudService.addProduct(productDTO));
+        JSONObject json = new JSONObject();
+        if(crudService.addProduct(productDTO)){
+            json.put("productAdded", true);
+        }
+
+        return Responses.ok(json.toJSONString());
     }
 
 
     @RequestMapping(value = "/updateProduct", method = RequestMethod.PUT, produces = "application/json")
     @ApiOperation(value = "Update the Existing product details")
-    public ResponseEntity updateProduct() {
-
-        return Responses.ok();
+    public ResponseEntity updateProduct(@RequestBody ProductDTO productDTO) {
+        JSONObject json = new JSONObject();
+        if(crudService.updateProduct(productDTO)){
+            json.put("productEdited", true);
+        }
+        return Responses.ok(json.toJSONString());
     }
 }
