@@ -1,7 +1,12 @@
 package com.yogesh.spring.common.exception;
 
-public class SpringBootRuntimeException extends RuntimeException {
-    private ErrorCode errorCode;
+import java.io.Serializable;
+
+public class SpringBootRuntimeException extends RuntimeException implements Serializable {
+
+
+    private static final long serialVersionUID = 7486437826115224132L;
+    private final ErrorCode errorCode;
 
     public SpringBootRuntimeException(ErrorCode errorCode) {
         super();

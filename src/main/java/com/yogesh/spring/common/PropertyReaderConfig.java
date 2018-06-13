@@ -1,7 +1,6 @@
 package com.yogesh.spring.common;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 
 /**
  * Class For Reading the Property Files fields

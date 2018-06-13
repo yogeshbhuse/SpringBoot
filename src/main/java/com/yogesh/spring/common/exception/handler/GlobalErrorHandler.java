@@ -42,7 +42,7 @@ public class GlobalErrorHandler {
         BindingResult result = ex.getBindingResult();
         List<FieldError> errors = result.getFieldErrors();
 
-        List<FieldErrorDTO> fieldErrors = new ArrayList<FieldErrorDTO>();
+        List<FieldErrorDTO> fieldErrors = new ArrayList<>();
 
         for (FieldError error : errors) {
             fieldErrors.add(new FieldErrorDTO(error.getField(), messageService.getMessage(error.getDefaultMessage(), error.getDefaultMessage())));

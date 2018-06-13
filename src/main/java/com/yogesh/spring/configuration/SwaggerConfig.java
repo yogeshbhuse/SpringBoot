@@ -1,7 +1,9 @@
 package com.yogesh.spring.configuration;
 
+import io.swagger.annotations.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -26,16 +28,13 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo(
-                "Spring Boot Swagger",
-                "REST API",
-                "V1",
-                "https://localhost/",
-                " .",
-                "License",
-                "https://localhost/"
-        );
-        return apiInfo;
-
+        return new ApiInfoBuilder()
+                .title("Spring Boot Swagger")
+                .description("REST API")
+                .version("v1.0")
+                .license("yogeshbhuse Licence (MIT)")
+                .licenseUrl("https://github.com/yogeshbhuse/SpringBoot/blob/master/LICENSE")
+                .contact(new springfox.documentation.service.Contact("Yogesh Bhuse", "https://github.com/yogeshbhuse/SpringBoot", "yogesh95.bhuse@gmail.com"))
+                .build();
     }
 }
