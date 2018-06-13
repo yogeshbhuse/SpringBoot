@@ -2,7 +2,8 @@ package com.yogesh.spring.common.exception;
 
 import java.io.Serializable;
 
-public class SpringBootRuntimeException extends RuntimeException implements Serializable {
+public class SpringBootRuntimeException extends RuntimeException
+        implements Serializable {
 
 
     private static final long serialVersionUID = 7486437826115224132L;

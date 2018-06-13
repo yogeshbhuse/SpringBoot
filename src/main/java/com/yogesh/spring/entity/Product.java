@@ -15,7 +15,8 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
 @Table(name = "PRODUCT_DETAILS")
-public class Product extends AbstractIdentityDAO implements Serializable {
+public class Product extends AbstractIdentityDAO
+        implements Serializable  {
 
     @Column(name = "Product_Id")
     private String productId;

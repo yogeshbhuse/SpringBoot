@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
  * Class For Reading the Property Files fields
  */
 
+
 public class PropertyReaderConfig {
 
     @Value("${keyStorePath}")

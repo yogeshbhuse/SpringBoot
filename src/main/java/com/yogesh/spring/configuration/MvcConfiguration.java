@@ -21,6 +21,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         registry.viewResolver(resolver);
     }
 
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 

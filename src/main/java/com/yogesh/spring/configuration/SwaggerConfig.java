@@ -31,7 +31,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Spring Boot Swagger")
                 .description("REST API")
-                .version("v1.0")
+                .version("v 1.0")
                 .license("yogeshbhuse Licence (MIT)")
                 .licenseUrl("https://github.com/yogeshbhuse/SpringBoot/blob/master/LICENSE")
                 .contact(new springfox.documentation.service.Contact("Yogesh Bhuse", "https://github.com/yogeshbhuse/SpringBoot", "yogesh95.bhuse@gmail.com"))
