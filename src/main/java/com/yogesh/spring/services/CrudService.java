@@ -8,6 +8,7 @@ import com.yogesh.spring.model.ProductDTO;
 import com.yogesh.spring.repository.ProductRepository;
 import com.yogesh.spring.util.CustomErrorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import java.util.List;
  */
 
 @Service
+@Scope("prototype")
 public class CrudService {
 
     @Autowired
