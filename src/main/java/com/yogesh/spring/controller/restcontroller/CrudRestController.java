@@ -6,6 +6,7 @@ import com.yogesh.spring.util.Responses;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
+import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -21,12 +22,15 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "/api/v1/product")
 public class CrudRestController {
 
+    private static final Logger LOGGER=Logger.getLogger(CrudRestController.class);
+
     @Autowired
     CrudService crudService;
 
     @RequestMapping(value = "/getAllProducts", method = RequestMethod.GET, produces = "application/json")
     @ApiOperation(value = "Provides the All Available Prodcuts")
     public ResponseEntity getAllProductDetails() {
+        LOGGER.info("Get ALL products for API /getAllProducts");
         return Responses.ok(crudService.getAllProduct());
     }
 
