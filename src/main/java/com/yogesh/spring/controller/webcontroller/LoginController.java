@@ -15,12 +15,12 @@ public class LoginController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String appLandingPage(Model model){
         model.addAttribute("loginPage","Hi Welcome To Spring Boot Web Login Application");
-        return "login";
+        return "index";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model){
         model.addAttribute("loginPage","Hi Welcome To Spring Boot Web Login Application");
-        return "login";
+        return "index";
     }
 }
